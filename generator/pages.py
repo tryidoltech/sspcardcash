@@ -257,7 +257,7 @@ def locations_index():
     groups = ""
     for g, zs in ZGROUP.items():
         items = [l for l in LOCATIONS if l["zone"] in zs]
-        cards = "".join(f'<a class="card loc-card reveal" href="{U("/locations/"+l["slug"]+"/")}"><img class="loc-img" src="{U("/assets/img/locations/"+l["slug"]+".webp")}" alt="{l["name"]}, Lucknow" width="800" height="450" loading="lazy" decoding="async"><h3>{I("pin","")}{l["name"]}</h3><p>{l["intro"][0].split(". ")[0]}.</p><span class="more">View {l["name"]} {I("arrow")}</span></a>' for l in items)
+        cards = "".join(f'<a class="card loc-card reveal" href="{U("/locations/"+l["slug"]+"/")}"><img class="loc-img" src="{U("/assets/img/locations/"+l["slug"]+".webp")}" srcset="{U("/assets/img/locations/"+l["slug"]+".webp")} 800w, {U("/assets/img/locations/"+l["slug"]+"-1200.webp")} 1200w" sizes="(min-width:1000px) 380px, (min-width:640px) 50vw, 100vw" alt="{l["name"]}, Lucknow" width="800" height="450" loading="lazy" decoding="async"><h3>{I("pin","")}{l["name"]}</h3><p>{l["intro"][0].split(". ")[0]}.</p><span class="more">View {l["name"]} {I("arrow")}</span></a>' for l in items)
         groups += f'<h2 class="mt32">{g}</h2><div class="grid g3">{cards}</div>'
     return phero(cr, "Credit Card Assistance Across Lucknow", f"SSP Card Cash serves customers in {len(LOCATIONS)} major localities of Lucknow from our office on Faizabad Road, near Indira Canal. Find your area below.") + f'''
 <section class="sec"><div class="wrap">
@@ -287,7 +287,7 @@ def location_page(l):
     body = phero(cr, f"SSP Card Cash in {n}, Lucknow", l["intro"][0], wa_text=wa_t) + f'''
 <section class="sec"><div class="wrap split wide-l">
 <div class="prose">
-<img class="loc-hero-img" src="{U("/assets/img/locations/"+l["slug"]+".webp")}" alt="{n}, Lucknow – area served by SSP Card Cash" width="800" height="450" loading="lazy" decoding="async">
+<img class="loc-hero-img" src="{U("/assets/img/locations/"+l["slug"]+".webp")}" srcset="{U("/assets/img/locations/"+l["slug"]+".webp")} 800w, {U("/assets/img/locations/"+l["slug"]+"-1200.webp")} 1200w" sizes="(min-width:900px) 700px, 100vw" alt="{n}, Lucknow – area served by SSP Card Cash" width="800" height="450" fetchpriority="high" decoding="async">
 <span class="eyebrow">{l["zone"]}</span>
 <h2>Credit card assistance in {n}</h2>
 <p>{l["intro"][1]}</p>
