@@ -9,7 +9,7 @@ from services import SERVICES
 from locations import LOCATIONS
 
 # ---------------- CONFIG (edit here) ----------------
-SITE = "https://www.sspcardcash.com"      # TODO: replace with the final domain
+SITE = "https://sspcardcash-bp4w.vercel.app"   # change to the custom domain once connected
 BRAND = "SSP Card Cash"
 PHONE1 = "+91 81003 58200"; TEL1 = "+918100358200"
 PHONE2 = "+91 81003 68200"; TEL2 = "+918100368200"

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
-Sitemap: https://www.sspcardcash.com/sitemap.xml
+Sitemap: https://sspcardcash-bp4w.vercel.app/sitemap.xml
